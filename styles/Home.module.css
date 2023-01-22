@@ -1,8 +1,8 @@
 
 .main {
 	z-index: 1;
-	background: linear-gradient(-45deg, #6E87CE, #B0C3FA, #6E87CE, #CFDBFA, #FFFFFF, #6E87CE);
-	background-size: 400% 400%;
+  background: linear-gradient(-45deg, #B0C3FA, #CFDBFA, #B0C3FA, #CFDBFA);	
+  background-size: 400% 400%;
 	width: 100%;
 	height: 100vh;
 	animation: animate 15s ease infinite;
