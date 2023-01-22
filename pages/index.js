@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import logo from '../public/logo/paw.png'
 import Lottie from 'lottie-react'
 import catBall from '../public/animations/cat_ball.json'
+import Button from '../components/Button'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,8 +26,8 @@ export default function Home() {
             <Lottie animationData={catBall} loop={true} />
           </div>
           <h1 className={styles.heading}>Never lose your <br></br> bestfriend again</h1>
-            <button className={styles.button}>Get Started</button>
-          </div>
+          <Button name='Get Started'></Button>
+        </div>
       </main>
     </>
   )
