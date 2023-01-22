@@ -20,7 +20,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.wrappercolumn}>
           <Image src={logo} width={100}></Image>
-          <h1 className={styles.heading}>Never lose your <br></br> bestfriend again</h1>
+          <Heading text='Never lose your best friend again'></Heading>
 
           <Button name='Get Started'></Button>
             
