@@ -47,3 +47,11 @@
   /* box-shadow: inset 5px 4px 20px #586ba2; */
   box-shadow: 2px 7px 20px #586ba2;
 }
+
+.animationcontainer {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  padding: 0%;
+  margin: 0%;
+}
