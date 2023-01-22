@@ -24,8 +24,6 @@ export default function Home() {
           <h1 className={styles.heading}>Never lose your <br></br> bestfriend again</h1>
 
           <Button name='Get Started'></Button>
-
-          <Textbox label='Description'></Textbox>
             
           </div>
       </main>
