@@ -12,7 +12,7 @@ export default function Home() {
         <div>
           <h1 className={styles.heading}>Tell us what happened?</h1>
           <Button name='I found a pet'></Button>
-          <Button name='I lost a pet'></Button>
+          <Button name='I lost a pet'></Button> 
         </div>
       </main>
     </>
