@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import logo from '../public/logo/paw.png'
+import Lottie from 'lottie-react'
+import catBall from '../public/animations/cat_ball.json'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,8 +20,11 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.wrappercolumn}>
-          <Image src={logo} width={100}></Image>
-          <h1 className={styles.heading}>Never lose your <br></br> best friend again</h1>
+          {/* <Image src={logo} width={100}></Image> */}
+          <div className={styles.animationcontainer} style={{marginBottom: '-5%', marginTop: '-5%'}}>
+            <Lottie animationData={catBall} loop={true} />
+          </div>
+          <h1 className={styles.heading}>Never lose your <br></br> bestfriend again</h1>
             <button className={styles.button}>Get Started</button>
           </div>
       </main>
