@@ -105,3 +105,23 @@ a {
     color-scheme: dark;
   }
 }
+
+label, select {
+  color: #252525;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+input, textarea, select {
+  background-color: rgb(232, 232, 232);
+  color: #252525;
+  border-radius: 7px;
+  min-height: 2em;
+  min-width: 40%;
+  margin-bottom: 1em;
+  border: 1px solid #907c7c;
+}
+
+select {
+  text-align: center;
+}
