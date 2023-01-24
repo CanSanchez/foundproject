@@ -34,6 +34,24 @@
   justify-content: center;
 }
 
+.columnflex {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  padding: 4em;
+  border-radius: 20px;
+}
+
 .heading {
   font-family: 'Poppins', sans-serif;
   color: #282A2E;
