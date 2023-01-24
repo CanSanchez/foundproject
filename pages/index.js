@@ -6,10 +6,14 @@ import logo from '../public/logo/paw.png'
 import Lottie from 'lottie-react'
 import catBall from '../public/animations/cat_ball.json'
 import Button from '../components/Button'
+import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -26,7 +30,7 @@ export default function Home() {
             <Lottie animationData={catBall} loop={true} />
           </div>
           <h1 className={styles.heading}>Never lose your <br></br> bestfriend again</h1>
-          <Button name='Get Started'></Button>
+          <Button name='Get Started' navigation={()=>router.push('/screening')}></Button>
         </div>
       </main>
     </>
