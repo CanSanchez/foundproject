@@ -37,8 +37,8 @@ export default function LostPage() {
             <textarea></textarea>
         </form>
         </div>
-          <Button name='Create Post'></Button>
-          
+          <Button name='Create Post'></Button> 
+
         </div>
       </main>
     </>
