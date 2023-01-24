@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@next/font": "13.1.2",
+    "leaflet": "^1.9.3",
+    "leaflet-defaulticon-compatibility": "^0.1.1",
     "lottie-react": "^2.3.1",
     "next": "13.1.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.2.4"
