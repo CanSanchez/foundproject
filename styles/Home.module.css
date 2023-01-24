@@ -46,6 +46,11 @@
   margin-top: 1em;
   /* box-shadow: inset 5px 4px 20px #586ba2; */
   box-shadow: 2px 7px 20px #586ba2;
+  transition: background-color .25s ease-out
+}
+
+.button:hover {
+  background-color: #5a6fa8;
 }
 
 .animationcontainer {
