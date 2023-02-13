@@ -1,3 +1,81 @@
+.field {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    margin-bottom: 1.5em;
+    width: 100%;
+}
+
+.wrappercolumn {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.columnflex {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardform {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: whitesmoke;
+  width: 60%;
+  height: fit-content;
+  padding: 4em;
+  border-radius: 20px;
+}
+
+.heading {
+  font-family: 'Poppins', sans-serif;
+  color: #282A2E;
+  text-align: center;
+  margin: 0%;
+}
+
+.button {
+  background-color: #6E87CE; 
+  padding: 1em 3em;
+  border-radius: 50px;
+  border: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 1em;
+  /* box-shadow: inset 5px 4px 20px #586ba2; */
+  box-shadow: 2px 7px 20px #586ba2;
+  transition: background-color .25s ease-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #5a6fa8;
+}
+
+.animationcontainer {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  padding: 0%;
+  margin: 0%;
+}
+
+.link {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #282A2E;
+}
+
+
 
 /* .main {
 	z-index: 1;
@@ -126,3 +204,14 @@
 /* Mobile responsiveness */
 @media (max-width: 480px) {
 }
+
+
+/* Tablet responsiveness */
+@media (max-width: 768px) and (min-width: 481px) {
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+}
+
+
