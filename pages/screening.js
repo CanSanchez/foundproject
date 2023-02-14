@@ -28,7 +28,7 @@ export default function Home() {
           </div>
           <h1 className={styles.heading}>Tell us what happened?</h1>
           <Button name='I found a pet'></Button>
-          <Button name='I lost a pet' navigation={()=>router.push('/lostpet')}></Button>
+          <Button name='I lost a pet' onClick={()=>router.push('/lostpet')}></Button>
           <a onClick={()=>router.push('/home')} className={styles.link} style={{marginTop: '3em'}}>Skip to Homepage</a> 
         </div>
       </main>

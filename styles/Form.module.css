@@ -1,8 +1,15 @@
+.main {
+  width: 100vw;
+	height: 100vh;
+  padding: 1em 2em;
+  overflow: scroll;
+}
+
 .field {
     display: flex;
     flex-direction: column-reverse;
     position: relative;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     width: 100%;
 }
 
@@ -28,10 +35,11 @@
   align-items: flex-start;
   justify-content: center;
   background-color: whitesmoke;
-  width: 60%;
+  width: 50%;
   height: fit-content;
-  padding: 4em;
+  padding: 3em 4em;
   border-radius: 20px;
+  box-shadow: 2px 7px 20px #586ba2;
 }
 
 .heading {
@@ -153,7 +161,7 @@
   font-family: 'Poppins', sans-serif;
   color: #282A2E;
   text-align: center;
-  margin: 0%;
+  margin-bottom: 1em;
 }
 
 .button {
@@ -198,11 +206,20 @@
 }
 
 /* Tablet responsiveness */
-@media (max-width: 768px) and (min-width: 481px) {
+@media (max-width: 820px) and (min-width: 481px) {
+  .cardform {
+    width: 80%;
+  }
 }
 
 /* Mobile responsiveness */
 @media (max-width: 480px) {
+  .main {
+    padding: 1em;
+  }
+  .cardform {
+    width: 90%;
+  }
 }
 
 

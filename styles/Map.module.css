@@ -1,0 +1,140 @@
+
+/* .main {
+	z-index: 1;
+  background: linear-gradient(-45deg, #B0C3FA, #CFDBFA, #B0C3FA, #CFDBFA);	
+  background-size: 400% 400%;
+	width: 100vw;
+	height: 100vh;
+	animation: animate 15s ease infinite;
+} */
+
+/****************GRADIENT BACKGROUND****************/
+
+.main {
+    width: 100vw;
+      height: 100%;
+        overflow: scroll;
+        background: linear-gradient(-45deg, #6E87CE, #CFDBFA, #B0C3FA, #FFFFFF); /* Set the initial gradient */
+        background-size: 200% 100%; /* Increase the size of the gradient */
+        animation: Gradient 10s ease infinite; /* Animate the gradient */
+        -webkit-animation: Gradient 8s ease infinite;
+        -moz-animation: Gradient 8s ease infinite;
+  }
+  
+  @-webkit-keyframes Gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @-moz-keyframes Gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @keyframes Gradient { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  
+  .home {
+    width: 100vw;
+      height: 100vh;
+    background-color: #FFFFFF;
+  }
+  
+  @keyframes animate {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  
+  .wrappercolumn {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .columnflex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+  }
+  
+  .heading {
+    font-family: 'Poppins', sans-serif;
+    color: #282A2E;
+    text-align: center;
+    margin: 0%;
+  }
+  
+  .button {
+    background-color: #6E87CE; 
+    padding: 1em 3em;
+    border-radius: 50px;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 1em;
+    /* box-shadow: inset 5px 4px 20px #586ba2; */
+    box-shadow: 2px 7px 20px #586ba2;
+    transition: background-color .25s ease-out;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #5a6fa8;
+  }
+  
+  .animationcontainer {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    padding: 0%;
+    margin: 0%;
+  }
+  
+  .link {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #282A2E;
+  }
+  
+  .map {
+    width: 100%;
+    min-height: 30%;
+    margin: 2em 0em;
+    z-index: 0;
+  }
+
+  .postContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0%;
+    margin: 0%;
+  }
+  
+  /* Tablet responsiveness */
+  @media (max-width: 768px) and (min-width: 481px) {
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 480px) {
+  }

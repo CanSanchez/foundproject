@@ -29,7 +29,7 @@ export default function Home() {
             <Lottie animationData={catBall} loop={true} />
           </div>
           <h1 className={styles.heading}>Never lose your <br></br> bestfriend again</h1>
-          <Button name='Get Started' navigation={()=>router.push('/screening')}></Button>
+          <Button name='Get Started' onClick={()=>router.push('/screening')}></Button>
         </div>
       </main>
     </>
