@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-let urlHome = "http://localhost:3000";
+let urlHome = "http://localhost:3001";
 
 test.describe('Header area', () => {
     test('The title tag', async({ page }) => {

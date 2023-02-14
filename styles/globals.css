@@ -123,6 +123,7 @@ label, select {
 } */
 
 input, textarea, select#text {
+  font-family: Arial, Helvetica, sans-serif;
   border: 0;
   background-color: inherit;
   border-bottom: 2px solid #dfdfdf;
@@ -170,4 +171,9 @@ input:valid, textarea:valid, select:valid {
 
 :-moz-placeholder {
   text-align: center;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, ol, li, a, button, input, textarea, select {
+  font-family: 'Poppins', sans-serif;
+  color: #424242
 }
