@@ -6,12 +6,36 @@ import Lottie from 'lottie-react'
 import catBall from '../public/animations/cat_ball.json'
 import Button from '../components/Button'
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react'
+import LoadingSpinner from '@/components/loadingSpinner'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('https://api.example.com/data');
+      const data = await response.json();
+      setData(data);
+      setIsLoading(false);
+    } catch (error) {
+      setError(error.message);
+      setIsLoading(false);
+    }
+  };
+  
+
+
   return (
     <>
       <Head>
@@ -21,15 +45,13 @@ export default function Home() {
         <link rel="icon" href="/logo_symbol_color.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
       </Head>
+      <LoadingSpinner />
       <main className={styles.main}>
-          <div className={styles.wrappercolumn}>
-            {/* <Image src={logo} width={100}></Image> */}
-            <div className={styles.animationcontainer} style={{marginBottom: '-5%', marginTop: '-5%'}}>
-              <Lottie animationData={catBall} loop={true} />
-            </div>
-            <h1 className={styles.heading}>Never lose your <br></br> bestfriend again</h1>
-            <Button name='Get Started' onClick={()=>router.push('/screening')}></Button>
-          </div>
+        {/* {isLoading ? (
+      <LoadingSpinner />
+      ) : (
+          <p>Hi</p>
+      )} */}
       </main>
     </>
   )
