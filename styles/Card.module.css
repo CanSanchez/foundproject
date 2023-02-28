@@ -15,6 +15,20 @@
     padding: 1rem;
 }
 
+.cardheader div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardheader div p {
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: .2rem .5rem;
+    width: fit-content;
+    text-transform: capitalize;
+}
+
 .cardtitle {
     font-size: 1.25rem;
     margin: 0;

@@ -4,13 +4,23 @@ import styles from '@/styles/Home.module.css'
 import Button from '../components/Button'
 import Lottie from 'lottie-react'
 import blackCat from '../public/animations/black-cat.json'
+import Link from 'next/link'
 import { useRouter } from 'next/router';
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
   const router = useRouter();
+
+  const handleClick = (type) => {
+    router.push(
+      {
+        pathname: '/formpage',
+        query: { type: type },
+      }
+    );
+    console.log(router.query.type);
+  }
+
 
   return (
     <>
@@ -27,9 +37,9 @@ export default function Home() {
             <Lottie animationData={blackCat} loop={true} />
           </div>
           <h1 className={styles.heading}>Tell us what happened?</h1>
-          <Button name='I found a pet'></Button>
-          <Button name='I lost a pet' onClick={()=>router.push('/lostpet')}></Button>
-          <a onClick={()=>router.push('/home')} className={styles.link} style={{marginTop: '3em'}}>Skip to Homepage</a> 
+          <Button name='I found a pet' onClick={()=>handleClick('found')}></Button>
+          <Button name='I lost a pet' onClick={()=>handleClick('lost')}></Button>
+          <Link href='/home' className={styles.link} style={{marginTop: '3em'}}>Skip to Home</Link>
         </div>
       </main>
     </>
