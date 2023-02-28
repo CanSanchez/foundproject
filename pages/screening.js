@@ -27,7 +27,7 @@ export default function Home() {
             <Lottie animationData={blackCat} loop={true} />
           </div>
           <h1 className={styles.heading}>Tell us what happened?</h1>
-          <Button name='I found a pet'></Button>
+          <Button name='I found a pet' onClick={()=>router.push('/foundpet')}></Button>
           <Button name='I lost a pet' onClick={()=>router.push('/lostpet')}></Button>
           <a onClick={()=>router.push('/home')} className={styles.link} style={{marginTop: '3em'}}>Skip to Homepage</a> 
         </div>

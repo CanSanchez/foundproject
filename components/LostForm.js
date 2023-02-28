@@ -3,7 +3,7 @@ import styles from '../styles/Form.module.css'
 import Button from './Button';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import axios from 'axios';
+
 
 export default function LostForm({ onSubmit }) {
 
@@ -41,7 +41,7 @@ export default function LostForm({ onSubmit }) {
 
     return (
           <div className={styles.columnflex}>
-            <h1 className={styles.heading}>Tell us more about your pet</h1>
+            
             <form className={styles.cardform} onSubmit={handleSubmit}>
                 <div className={styles.field}>
                     
