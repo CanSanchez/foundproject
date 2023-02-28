@@ -4,6 +4,7 @@ import Button from './Button';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import axios from 'axios';
+import neighbourhoods from '@/data/neighbourhood';
 
 export default function LostForm({ onSubmit }) {
 
@@ -38,7 +39,7 @@ export default function LostForm({ onSubmit }) {
             title
         });
     };
-
+ 
     return (
           <div className={styles.columnflex}>
             <h1 className={styles.heading}>Tell us more about your pet</h1>
@@ -59,8 +60,7 @@ export default function LostForm({ onSubmit }) {
                         value={petName} onChange={(e) => setPetName(e.target.value)}/>
                     <label htmlFor='petname'>Pet's Name</label>   
                 </div> 
-                <div className={styles.field}>  
-                
+                <div className={styles.field}>
                     <input type="text" id="color" name="color" required
                         value={petColor} onChange={(e) => setPetColor(e.target.value)} />
                     <label htmlFor='color'>Color</label>
@@ -74,8 +74,16 @@ export default function LostForm({ onSubmit }) {
     
 
             <div className={styles.field}>
-                <input type="text" id="location" name="location" required
+             {/* create an autocomplete aria */}
+                
+                <input type="text" id="location" name="location"
+                    list={neighbourhoods} required
                     value={lastLocation} onChange={(e) => setLastLocation(e.target.value)}/>
+                <datalist id={neighbourhoods}>
+                    {neighbourhoods.map((neighbourhood) => (
+                        <option value={neighbourhood.neighbourhood} key={neighbourhood} />
+                    ))}
+                </datalist>
                 <label htmlFor='location'>Last seen</label>
             </div>
 

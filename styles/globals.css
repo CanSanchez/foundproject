@@ -151,7 +151,9 @@ label, select {
 }
 
 input:focus+label, textarea:focus+label,
-input:valid+label, textarea:valid+label{
+input:valid+label, textarea:valid+label,
+option:valid+label, option:focus+label,
+select:focus+label, input:focus+datalist+label, input:valid+datalist+label {
   color: #626262;
   height: 2em;
   font-size: .8em;

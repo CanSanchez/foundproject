@@ -18,6 +18,9 @@ export default function Map() {
         });
     }, []);
 
+    //change position to user's pinned location
+
+
     return (
         
         <MapContainer className={styles.map} center={position} zoom={14} scrollWheelZoom={true}>
