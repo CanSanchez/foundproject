@@ -7,8 +7,6 @@ import catBall from '../public/animations/cat_ball.json'
 import Button from '../components/Button'
 import { useRouter } from 'next/router';
 
-const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
 
   const router = useRouter();

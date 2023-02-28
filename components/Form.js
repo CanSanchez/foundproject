@@ -6,9 +6,9 @@ import { useState } from 'react';
 import axios from 'axios';
 import neighbourhoods from '@/data/neighbourhood';
 
-export default function LostForm({ onSubmit }) {
+export default function FormComponent({ onSubmit, type }) {
 
-    const [petType, setPetType] = useState('Dog');
+    const [petType, setPetType] = useState('');
     const [petName, setPetName] = useState();
     const [petColor, setPetColor] = useState('');
     const [petBreed, setPetBreed] = useState('');
@@ -17,9 +17,10 @@ export default function LostForm({ onSubmit }) {
     const [contactEmail, setEmail] = useState('');
     const [petDescription, setDescription] = useState('');
     const [petImage, setImage] = useState('https://place.dog/300/200');
-    const [title, setTitle] = useState('Lost Pet');
 
-    console.log(petType, petName, petColor, petBreed, lastLocation, contactPhone, contactEmail, petDescription, petImage, title);
+    const [formType, setFormType] = useState(type);
+
+    console.log(petType, petName, petColor, petBreed, lastLocation, contactPhone, contactEmail, petDescription, petImage, formType);
 
     const router = useRouter();
 
@@ -35,20 +36,20 @@ export default function LostForm({ onSubmit }) {
             contactPhone,
             contactEmail,
             petDescription,
-            petImage,
-            title
+            petImage
         });
     };
  
     return (
           <div className={styles.columnflex}>
-            <h1 className={styles.heading}>Tell us more about your pet</h1>
+            {formType === 'lost' ? <h1 className={styles.heading}>Tell us more about your pet</h1> : <h1 className={styles.heading}>Tell us about the pet you found</h1>}
             <form className={styles.cardform} onSubmit={handleSubmit}>
                 <div className={styles.field}>
                     
                     <select value={petType}
                         onChange={(e) => setPetType(e.target.value)}
                         id="text" name="pettype">
+                        <option value=""></option>
                         <option value="Dog">Dog</option>
                         <option value="Cat">Cat</option>
                     </select>

@@ -31,6 +31,7 @@ export default function Home( { posts } ) {
                         breed={post.petBreed}
                         description={post.petDescription}
                         location={post.lastLocation}
+                        formtype={post.formType}
                          />
                         ))}
                     </div>         

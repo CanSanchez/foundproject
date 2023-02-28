@@ -146,7 +146,7 @@ label, select {
   font-size: 1em;
   color: #424242;
   width: 100%;
-  height: 1.8em;
+  height: 1.5em;
   transition: .3s ease-in-out;
 }
 
@@ -155,7 +155,7 @@ input:valid+label, textarea:valid+label,
 option:valid+label, option:focus+label,
 select:focus+label, input:focus+datalist+label, input:valid+datalist+label {
   color: #626262;
-  height: 2em;
+  height: 1em;
   font-size: .8em;
   top: 0em;
   pointer-events: none;

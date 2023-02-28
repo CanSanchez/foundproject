@@ -9,10 +9,11 @@ export default async function handle(req, res) {
   switch (method) {
     case 'POST':
       // get the title and content from the request body
-        const { petType, petName, petColor, petBreed, lastLocation, contactPhone, contactEmail, petDescription, petImage, title } = req.body
+        const { formType, petType, petName, petColor, petBreed, lastLocation, contactPhone, contactEmail, petDescription, petImage } = req.body
       // use prisma to create a new post using that data
       const post = await prisma.post.create({
         data: {
+            formType,
             petType,
             petName,
             petColor,
@@ -21,8 +22,7 @@ export default async function handle(req, res) {
             contactPhone,
             contactEmail,
             petDescription,
-            petImage,
-            title
+            petImage
         }
       })
       // send the post object back to the client

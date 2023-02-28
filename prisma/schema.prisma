@@ -12,9 +12,9 @@ datasource db {
 
 model Post {
   id        Int      @id @default(autoincrement())
+  formType  String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  title     String
   petType   String?
   petName   String?
   petColor  String?
