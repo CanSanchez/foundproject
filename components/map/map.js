@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, useMap, Popup, CircleMarker  } from 'react-leaflet'
+import { MapContainer, TileLayer, useMap, Popup, CircleMarker, Marker  } from 'react-leaflet'
 
 import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility'
@@ -7,7 +7,6 @@ import styles from '../../styles/Home.module.css'
 import { useEffect, useState } from 'react';
 
 export default function Map() {
-
 
     const [position, setPosition] = useState([49.28594, -123.11129]);
 
@@ -20,6 +19,13 @@ export default function Map() {
 
     //change position to user's pinned location
 
+    // Paw Map Icon
+    const PawIcon = L.icon({
+        iconUrl: '../map/PawPin.svg',
+        iconSize:     [65, 65], // size of the icon
+        shadowSize:   [70, 74], // size of the shadow
+    });
+
 
     return (
         
@@ -28,6 +34,22 @@ export default function Map() {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
+
+            <Marker position={position} icon={PawIcon}>
+                <Popup>
+                    <h2>Lost Dog</h2>
+                    <img src='https://place.dog/300/200' width={200} height={150}></img>
+                </Popup>
+            </Marker>
+
+            {/* Mount Pleasant Coordinates*/}
+            <Marker position={[49.266528331473005, -123.10589969900502]} icon={PawIcon}>
+                <Popup>
+                    <h2>Lost Cat</h2>
+                    <img src='http://placekitten.com/200/300' width={200} height={150}></img>
+                </Popup>
+            </Marker>
+
         </MapContainer>
     )
 }
