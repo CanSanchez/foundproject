@@ -67,10 +67,32 @@
   box-shadow: 2px 7px 20px #586ba2;
   transition: background-color .25s ease-out;
   cursor: pointer;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.4);
+		transform: translatey(0px);
+	}
+  50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.1);
+		transform: translatey(-20px);
+	}
+  100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.4);
+		transform: translatey(0px);
+	}
 }
 
 .button:hover {
   background-color: #5a6fa8;
+}
+
+.button:active {
+  -webkit-transform: translate(5px, 5px);
+  transform: translate(5px, 5px);
+  box-shadow: inset 5px 4px 20px #586ba2;
 }
 
 .animationcontainer {

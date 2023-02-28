@@ -105,7 +105,7 @@ export default function LostForm({ onSubmit }) {
             </div>
 
             <span style={{alignSelf: 'center'}}>
-                <Button name='Create Post'></Button> 
+                <Button className={styles.createPost} name='Create Post'></Button> 
             </span>
             </form>
           </div>
