@@ -1,6 +1,6 @@
 # Found
 
-![Found] (/screenshots/1.png)
+![Found] (https://github.com/CanSanchez/foundproject/blob/main/public/screenshots/1.png)
 
 Found is a web application that allows users to post lost and found pets. It aims to elimate paper wastes, boost exposure, and bring your best friend back home quickly and safely.
 
