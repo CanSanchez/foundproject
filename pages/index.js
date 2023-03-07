@@ -22,7 +22,6 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.wrappercolumn}>
-          {/* <Image src={logo} width={100}></Image> */}
           <div className={styles.animationcontainer} style={{marginBottom: '-5%', marginTop: '-5%'}}>
             <Lottie animationData={catBall} loop={true} />
           </div>
