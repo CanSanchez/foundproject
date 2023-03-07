@@ -39,7 +39,7 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -71,7 +71,7 @@
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
   }
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -125,7 +125,7 @@ label, select {
 input, textarea, select#text {
   font-family: Arial, Helvetica, sans-serif;
   border: 0;
-  background-color: inherit;
+  background-color: transparent;
   border-bottom: 2px solid #dfdfdf;
   outline: none;
   color: #424242;
@@ -137,7 +137,20 @@ input, textarea, select#text {
 }
 
 
-label, select {
+label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  left: 0;
+  top: 1.5em;
+  font-size: 1em;
+  color: #424242;
+  width: 100%;
+  height: 2em;
+  transition: .3s ease-in-out;
+}
+
+select {
   font-family: Arial, Helvetica, sans-serif;
   font-family: 'Poppins', sans-serif;
   position: relative;
@@ -148,6 +161,7 @@ label, select {
   width: 100%;
   height: 1.5em;
   transition: .3s ease-in-out;
+  margin-bottom: 1em;
 }
 
 input:focus+label, textarea:focus+label,
@@ -157,14 +171,17 @@ select:focus+label, input:focus+datalist+label, input:valid+datalist+label {
   color: #626262;
   height: 1em;
   font-size: .8em;
-  top: 0em;
+  top: -1em;
   pointer-events: none;
+  
 }
 
 
 input:focus, textarea:focus, select:focus,
 input:valid, textarea:valid, select:valid {
   border-bottom: 2px solid #424242;
+  color: #424242;
+  background-color: whitesmoke;
 }
 
 ::-webkit-input-placeholder {
@@ -178,4 +195,51 @@ input:valid, textarea:valid, select:valid {
 p, h1, h2, h3, h4, h5, h6, ul, ol, li, a, button, input, textarea, select {
   font-family: 'Poppins', sans-serif;
   color: #424242
+}
+
+input, textarea, select {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+input:-internal-autofill-previewed {
+  border-bottom: 2px solid #424242;
+  color: #424242;
+  background-color: whitesmoke;
+}
+
+input:-internal-autofill-previewed {
+  border-bottom: 2px solid #424242;
+  color: #424242;
+  background-color: whitesmoke;
+}
+
+input:-internal-autofill-selected {
+  border-bottom: 2px solid #424242;
+  color: #424242;
+  background-color: whitesmoke;
+}
+
+input:-webkit-autofill {
+  border-bottom: 2px solid #424242;
+  color: #424242;
+  background-color: whitesmoke;
+}
+
+input:-webkit-autofill:focus {
+  border-bottom: 2px solid #424242;
+  color: #424242;
+  background-color: whitesmoke;
+}
+
+input:-webkit-autofill:hover {
+  border-bottom: 2px solid #424242;
+  color: #424242;
+  background-color: whitesmoke;
+}
+
+input:-webkit-autofill:active {
+  border-bottom: 2px solid #424242;
+  color: #424242;
+  background-color: whitesmoke;
 }

@@ -3,12 +3,14 @@
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     margin: 2rem auto;
-    width: 90%;
-    max-width: fit-content;
+    width: 400px;
+    max-width: 400px;
+    height: 500px;
+    max-height: 500px;
 }
 
 .cardheader {
-    background-color: #6E87CE;
+    background-color: #ed79a7;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     color: #fff;
@@ -44,5 +46,12 @@
 }
 
 .cardimage {
-    width: 100%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.cardtext {
+    font-size: 1rem;
+    font-weight: lighter;
 }
