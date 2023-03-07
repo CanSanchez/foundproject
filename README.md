@@ -1,5 +1,7 @@
 # Found
 
+![Found] (/screenshots/1.png)
+
 Found is a web application that allows users to post lost and found pets. It aims to elimate paper wastes, boost exposure, and bring your best friend back home quickly and safely.
 
 The Found web app is made with Next.js and its database is made with Prisma and Postgresql. 
