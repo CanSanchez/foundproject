@@ -160,8 +160,9 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 0%;
+    padding: 0em 8em 0em;
     margin: 0%;
     flex-wrap: wrap;
     align-content: center;
+    /* gap: 5px; */
 }
