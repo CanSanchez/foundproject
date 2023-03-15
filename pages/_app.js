@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import { useState } from 'react';
-import LoadingSpinner from '@/components/LoadingSpinner';
+import LoadingSpinner from '@/components/loadingSpinner';
 import Router from 'next/router';
 
 
