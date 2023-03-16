@@ -1,7 +1,10 @@
 .main {
   width: 100vw;
-	height: 100vh;
-  padding: 1em 2em;
+	min-height: 150vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 4em;
   overflow: scroll;
 }
 
@@ -14,7 +17,7 @@
 }
 
 .wrappercolumn {
-  height: 100vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,8 +25,8 @@
 }
 
 .columnflex {
-  width: 80%;
-  height: 85%;
+  width: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,8 +40,8 @@
   justify-content: center;
   background-color: whitesmoke;
   width: 50%;
-  height: 100%;
-  padding: 3em 4em;
+  height: fit-content;
+  padding: 4em;
   border-radius: 20px;
   box-shadow: 2px 7px 20px #586ba2;
 }
@@ -91,7 +94,47 @@
   color: #282A2E;
 }
 
+.upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  width: 90%;
+  height: 300px;
+  border-radius: 20px;
+  border: 1px solid #424242;
+  margin-bottom: 1em;
+}
 
+.uploadfield {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.uploadfield label {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #282A2E;
+  font-size: .8em;
+  margin-bottom: 0.5em;
+}
+
+.uploadimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.upload ~ input {
+  font-size: 1em;
+  font-weight: 100;
+}
 
 /* .main {
 	z-index: 1;
@@ -147,22 +190,6 @@
 	100% {
 		background-position: 0% 50%;
 	}
-}
-
-.wrappercolumn {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.columnflex {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .heading {

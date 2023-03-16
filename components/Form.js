@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '../styles/Form.module.css'
 import Button from './Button';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import neighbourhoods from '@/data/neighbourhood';
 
@@ -16,17 +16,24 @@ export default function FormComponent({ onSubmit, type }) {
     const [contactPhone, setPhone] = useState('');
     const [contactEmail, setEmail] = useState('');
     const [petDescription, setDescription] = useState('');
-    const [petImage, setImage] = useState('https://place.dog/300/200');
+    const [petImage, setImage] = useState('');
 
     const [formType, setFormType] = useState(type);
+    const [latitude, setLatitude] = useState();
+    const [longitude, setLongitude] = useState();
 
-    console.log(petType, petName, petColor, petBreed, lastLocation, contactPhone, contactEmail, petDescription, petImage, formType);
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    console.log(lastLocation, latitude, longitude, petImage);
+
+    // console.log(petType, petName, petColor, petBreed, lastLocation.neighbourhood, contactPhone, contactEmail, petDescription, petImage, formType, lastLocation.latitude, lastLocation.longitude);
 
     const router = useRouter();
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
         await onSubmit({
             petType,
             petName,
@@ -36,14 +43,58 @@ export default function FormComponent({ onSubmit, type }) {
             contactPhone,
             contactEmail,
             petDescription,
-            petImage
+            petImage,
+            latitude,
+            longitude
         });
     };
+
+//   upload image to public folder
+
+    const handleImageUpload = () => {
+
+        const formData = new FormData();
+        formData.append('file', selectedImage);
+        formData.append('upload_preset', 'foundproject');
+
+        axios.post('https://api.cloudinary.com/v1_1/djhxv0heo/image/upload', formData).then((res) => {
+            console.log(res.data.secure_url);
+            setImage(res.data.secure_url);
+        });
+    }
+
+    
+    useEffect(() => {
+        getLocation();
+    }, [lastLocation]);
+
+   //get lastlocation and match it to the neighbourhoods array
+    const getLocation = () => {
+        neighbourhoods.find((neighbourhood) => {
+            if (neighbourhood.neighbourhood === lastLocation) {
+                setLatitude(neighbourhood.lat);
+                setLongitude(neighbourhood.lng);
+            }
+        });
+    }
  
     return (
           <div className={styles.columnflex}>
             {formType === 'lost' ? <h1 className={styles.heading}>Tell us more about your pet</h1> : <h1 className={styles.heading}>Tell us about the pet you found</h1>}
             <form className={styles.cardform} onSubmit={handleSubmit}>
+                <div className={styles.uploadfield}>
+                    <div className={styles.upload}>
+                       {
+                            selectedImage ? <img src={URL.createObjectURL(selectedImage)} alt="pet" className={styles.uploadimg}/> : <label htmlFor="img" className={styles.uploadlabel}>Upload a photo of your pet</label>
+                       }
+                    </div>
+                    <input type="file" id="img" name="img" accept="image/*" required
+                        onChange={
+                            (e) => setSelectedImage(e.target.files[0])
+                        }/>
+                    <Button name="Upload Photo" onClick={handleImageUpload} />
+                </div>
+
                 <div className={styles.field}>
                     
                     <select value={petType}
@@ -77,27 +128,29 @@ export default function FormComponent({ onSubmit, type }) {
             <div className={styles.field}>
              {/* create an autocomplete aria */}
                 
-                <input type="text" id="location" name="location"
-                    list={neighbourhoods} required
-                    value={lastLocation} onChange={(e) => setLastLocation(e.target.value)}/>
-                <datalist id={neighbourhoods}>
+                <select value={lastLocation} id="location" name="location" required
+                     onChange={(e) => setLastLocation(e.target.value)}>
+                    <option value=""></option>
                     {neighbourhoods.map((neighbourhood) => (
-                        <option value={neighbourhood.neighbourhood} key={neighbourhood} />
+                        <option key={neighbourhood.neighbourhood} value={neighbourhood.neighbourhood}>
+                            {neighbourhood.neighbourhood}
+                        </option>
                     ))}
-                </datalist>
+                </select>
                 <label htmlFor='location'>Last seen</label>
             </div>
 
             
             <div className={styles.field}>
-            <input type="phone" id="phone" name="phone" required 
+            <input type="number" id="phone" name="phone" required
+
                 value={contactPhone} onChange={(e) => setPhone(e.target.value)}/>
-                <label htmlFor='phone'>Phone number (optional)</label>
+                <label htmlFor='phone'>Phone number</label>
             </div>
             <div className={styles.field}>
                 <input type="text" id="email" name="email" required 
                     value={contactEmail} onChange={(e) => setEmail(e.target.value)}/>
-                <label htmlFor='email'>Email (optional)</label>
+                <label htmlFor='email'>Email</label>
             </div>
             <div className={styles.field}>
                 <textarea id='description' required

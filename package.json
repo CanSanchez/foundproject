@@ -17,6 +17,8 @@
     "production:build": "npx prisma generate && npx prisma migrate deploy && next build"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.11.1",
+    "@cloudinary/url-gen": "^1.9.2",
     "@next/font": "13.1.2",
     "@prisma/client": "^4.10.1",
     "axios": "^1.3.3",

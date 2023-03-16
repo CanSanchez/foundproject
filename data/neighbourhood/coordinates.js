@@ -1,5 +1,3 @@
-import neighbourhoods from ".";
-
 //get coordinates for each neighbourhood
 const coordinates = [
     {

@@ -122,7 +122,7 @@ label, select {
   border: 1px solid #907c7c;
 } */
 
-input, textarea, select#text {
+input, textarea, select#text, select#location {
   font-family: Arial, Helvetica, sans-serif;
   border: 0;
   background-color: transparent;

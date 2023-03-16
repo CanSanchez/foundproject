@@ -5,8 +5,9 @@ import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import styles from '../../styles/Home.module.css'
 import { useEffect, useState } from 'react';
+// import { prisma } from '@/server/db/client'
 
-export default function Map() {
+export default function Map(props) {
 
     const [position, setPosition] = useState([49.28594, -123.11129]);
 
@@ -26,6 +27,7 @@ export default function Map() {
         shadowSize:   [70, 74], // size of the shadow
     });
 
+    console.log(props.posts);
 
     return (
         
@@ -35,20 +37,18 @@ export default function Map() {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            <Marker position={position} icon={PawIcon}>
-                <Popup>
-                    <h2>Lost Dog</h2>
-                    <img src='https://place.dog/300/200' width={200} height={150}></img>
-                </Popup>
-            </Marker>
+            {props.posts.map((post) => (
+                <Marker position={[post.latitude, post.longitude]} icon={PawIcon}>
+                    <Popup>
+                        <h2>{post.petName}</h2>
+                        <img src={post.petImage} width={200} height={150}></img>
+                    </Popup>
+                </Marker>
+            ))}
 
-            {/* Mount Pleasant Coordinates*/}
-            <Marker position={[49.266528331473005, -123.10589969900502]} icon={PawIcon}>
-                <Popup>
-                    <h2>Lost Cat</h2>
-                    <img src='http://placekitten.com/200/300' width={200} height={150}></img>
-                </Popup>
-            </Marker>
+   
+
+
 
         </MapContainer>
     )
