@@ -37,6 +37,8 @@ export default function Home( { posts } ) {
                         formtype={post.formType}
                         image={post.petImage}
                         date={post.createdAt}
+                        phone={post.contactPhone}
+                        email={post.contactEmail}
                          />
                         ))}
                     </div>         
