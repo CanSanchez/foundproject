@@ -7,6 +7,8 @@ import { prisma } from '@/server/db/client';
 
 export default function Home( { posts } ) {
 
+    console.log(posts);
+
   return (
     <>
         <Head>
@@ -18,7 +20,7 @@ export default function Home( { posts } ) {
         </Head>
         <main className={styles.main}>
             <div className={styles.wrappercolumn}>
-                <Map />
+                <Map posts={posts} />
                 <div className={styles.postContainer}>
                     <h1 className={styles.postTitle}>Recent Posts</h1>
                     <div className={styles.postList}>
@@ -32,6 +34,7 @@ export default function Home( { posts } ) {
                         description={post.petDescription}
                         location={post.lastLocation}
                         formtype={post.formType}
+                        image={post.petImage}
                          />
                         ))}
                     </div>         

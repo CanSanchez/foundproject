@@ -24,4 +24,7 @@ model Post {
   contactEmail String?
   petDescription String?
   petImage String?
+  latitude  Float
+  longitude Float
 }
+

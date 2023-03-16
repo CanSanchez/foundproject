@@ -17,7 +17,9 @@ export default function LostPage({type}) {
   console.log(formType);
   console.log(type);
 
-  const handleSubmit = async ({ petType, petName, petColor, petBreed, lastLocation, contactPhone, contactEmail, petDescription, petImage }) => {
+  const handleSubmit = async ({ petType, petName, petColor, petBreed, lastLocation, contactPhone, contactEmail, petDescription, petImage, latitude, longitude }) => {
+
+    console.log(latitude, longitude)
     try {
       const { data } = await axios.post('/api/posts', {
         formType: formType,
@@ -29,7 +31,9 @@ export default function LostPage({type}) {
         contactPhone,
         contactEmail,
         petDescription,
-        petImage
+        petImage,
+        latitude,
+        longitude
       });
       console.log(data);
       router.push('/home');
