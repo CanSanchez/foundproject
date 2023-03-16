@@ -4,6 +4,7 @@ import Head from 'next/head'
 import PetCard from '../components/PetCard';
 import React, { useState, useEffect } from 'react';
 import { prisma } from '@/server/db/client';
+import Navbar from '@/components/Navbar';
 
 export default function Home( { posts } ) {
 
@@ -16,9 +17,9 @@ export default function Home( { posts } ) {
             <meta name="description" content="Found is an app that digitizes missing pet posters. It aims to elimate paper wastes, boost exposure, and bring your best friend back home quickly and safely." />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/logo_symbol_color.ico" />
-            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
         </Head>
         <main className={styles.main}>
+            <Navbar />
             <div className={styles.wrappercolumn}>
                 <Map posts={posts} />
                 <div className={styles.postContainer}>
@@ -35,6 +36,7 @@ export default function Home( { posts } ) {
                         location={post.lastLocation}
                         formtype={post.formType}
                         image={post.petImage}
+                        date={post.createdAt}
                          />
                         ))}
                     </div>         

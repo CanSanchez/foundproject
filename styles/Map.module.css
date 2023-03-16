@@ -143,6 +143,20 @@
     margin: 0%;
   }
   
+  .map {
+    width: 100%;
+    height: 40rem;
+    margin: 2em 0em;
+    z-index: 0;
+  }
+
+  .smallimage {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
   /* Tablet responsiveness */
   @media (max-width: 768px) and (min-width: 481px) {
   }
