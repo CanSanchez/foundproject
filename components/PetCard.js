@@ -21,13 +21,13 @@ export default function PetCard(props) {
 
     useEffect(() => {
         if (diffDays > 0) {
-            setTimeAgo(diffDays + 'days ago');
+            setTimeAgo(diffDays + (diffDays > 1 ? ' days ago' : ' day ago'));
         } else if (diffHours > 0) {
-            setTimeAgo(diffHours + 'hours ago');
+            setTimeAgo(diffHours + (diffHours > 1 ? ' hours ago' : ' hour ago'));
         } else if (diffMinutes > 0) {
-            setTimeAgo(diffMinutes + 'minutes ago');
+            setTimeAgo(diffMinutes + (diffMinutes > 1 ? ' minutes ago' : ' minute ago'));
         } else {
-            setTimeAgo(diffSeconds + 'seconds ago');
+            setTimeAgo(diffSeconds + (diffSeconds > 1 ? ' seconds ago' : ' second ago'));
         }
     }, []);
     
@@ -68,21 +68,29 @@ export default function PetCard(props) {
                     <p>Pet Details</p>
                     <p>{props.description}</p>
                 </div>
-                <div className={styles.carddetails}>
+                <div className={styles.cardcontact}>
                     {
                         props.formtype === 'found' ?
                         <p>Contact Finder</p>
                         :
                         <p>Contact Owner</p>
                     }
-                    <div className={styles.cardcontact}>
-                        <div className={styles.cardcontactitem}>
-                            <p className={styles.cardcontacttitle}>Email</p>
-                        </div>
-                    </div> 
+                    <div className={styles.flexrow}>
+                        <a href={`tel:${props.phone}`}>
+                            <div className={styles.cardcontactitem}>
+                                <Image src="/icons/call.png" alt="Phone Icon" width={25} height={25} />
+                                <p>Call</p>
+                            </div>
+                        </a>
+                        <a href={`mailto:${props.email}`}>
+                            <div className={styles.cardcontactitem}>
+                                <Image src="/icons/email.png" alt="Email Icon" width={25} height={25} />
+                                <p>Email</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-
-                <p className={styles.cardtext}>Posted {timeAgo}</p>
+                <p className={styles.timestamp}>Posted {timeAgo}</p>
             </div>
         </div>
     );
