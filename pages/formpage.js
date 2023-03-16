@@ -52,7 +52,7 @@ export default function LostPage({type}) {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
       </Head>
       <main className={styles.main}>
-        <Link href='/home' className={styles.link} style={{position: 'fixed', top: '1em', right:'1em'}}>Skip to Home</Link>
+        <Link href='/home' className={styles.link}>Skip to Home</Link>
         <div className={styles.wrappercolumn}>
           <FormComponent onSubmit={handleSubmit} type={type}/>
         </div> 

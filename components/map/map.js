@@ -38,10 +38,11 @@ export default function Map(props) {
             />
 
             {props.posts.map((post) => (
-                <Marker position={[post.latitude, post.longitude]} icon={PawIcon}>
+                <Marker position={[post.latitude, post.longitude]} icon={PawIcon} key={post.id}>
                     <Popup>
                         <h2>{post.petName}</h2>
-                        <img src={post.petImage} width={200} height={150}></img>
+                        <p>{post.lastLocation}</p>
+                        <img src={post.petImage} className={styles.smallimage}></img>
                     </Popup>
                 </Marker>
             ))}
