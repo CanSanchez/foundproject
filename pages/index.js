@@ -22,8 +22,8 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.wrappercolumn}>
-          <div className={styles.animationcontainer} style={{marginBottom: '-5%', marginTop: '-5%'}}>
-            <Lottie animationData={catBall} loop={true} />
+          <div className={styles.animationcontainer} style={{marginBottom: '-90px', marginTop: '-100px'}}>
+            <Lottie animationData={catBall} loop={true} width={200} height={200}/>
           </div>
           <h1 className={styles.heading}>Never lose your <br></br> bestfriend again</h1>
           <Button name='Get Started' onClick={()=>router.push('/screening')}></Button>

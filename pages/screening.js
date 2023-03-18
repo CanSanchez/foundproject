@@ -33,7 +33,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.wrappercolumn}>
-          <div className={styles.animationcontainer} style={{marginBottom: '0%', marginTop: '-40%'}}>
+          <div className={styles.animationcontainer} style={{marginBottom: '0%', marginTop: '-400px'}}>
             <Lottie animationData={blackCat} loop={true} />
           </div>
           <h1 className={styles.heading}>Tell us what happened?</h1>
