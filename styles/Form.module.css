@@ -40,6 +40,7 @@
   justify-content: center;
   background-color: whitesmoke;
   width: 50%;
+  min-width: 700px;
   height: fit-content;
   padding: 4em;
   border-radius: 20px;
@@ -246,25 +247,28 @@
 /* Tablet responsiveness */
 @media (max-width: 820px) and (min-width: 481px) {
   .cardform {
-    width: 80%;
+
+    width: 90%;
+    min-width: 400px;
   }
 }
 
 /* Mobile responsiveness */
 @media (max-width: 480px) {
   .main {
-    padding: 1em;
+    padding: 4em 1em;
   }
   .cardform {
     width: 90%;
+    min-width: 300px;
+    padding: 2em;
   }
-}
 
+  .heading {
+    font-size: 1.5em;
+  }
 
-/* Tablet responsiveness */
-@media (max-width: 768px) and (min-width: 481px) {
-}
-
-/* Mobile responsiveness */
-@media (max-width: 480px) {
+  .upload {
+    height: 200px;
+  }
 }
