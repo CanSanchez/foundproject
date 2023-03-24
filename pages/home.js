@@ -26,20 +26,20 @@ export default function Home( { posts } ) {
                     <h1 className={styles.postTitle}>Recent Posts</h1>
                     <div className={styles.postList}>
                         {posts.map((post) => (
-                    <PetCard
-                        key={post.id}
-                        pettype={post.petType}
-                        petname={post.petName}
-                        color={post.petColor}
-                        breed={post.petBreed}
-                        description={post.petDescription}
-                        location={post.lastLocation}
-                        formtype={post.formType}
-                        image={post.petImage}
-                        date={post.createdAt}
-                        phone={post.contactPhone}
-                        email={post.contactEmail}
-                         />
+                            <PetCard
+                                key={post.id}
+                                pettype={post.petType}
+                                petname={post.petName}
+                                color={post.petColor}
+                                breed={post.petBreed}
+                                description={post.petDescription}
+                                location={post.lastLocation}
+                                formtype={post.formType}
+                                image={post.petImage}
+                                date={post.createdAt}
+                                phone={post.contactPhone}
+                                email={post.contactEmail}
+                            />
                         ))}
                     </div>         
                 </div>
@@ -49,7 +49,7 @@ export default function Home( { posts } ) {
 )
 }
 
-//serversideprops
+// Get data from database
 
 export async function getServerSideProps() {
   

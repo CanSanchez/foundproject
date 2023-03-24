@@ -48,9 +48,6 @@ export default function Map(props) {
             ))}
 
    
-
-
-
         </MapContainer>
     )
 }

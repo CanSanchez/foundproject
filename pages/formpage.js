@@ -9,7 +9,7 @@ import Link from 'next/link'
 import axios from 'axios'
 import FormComponent from '@/components/Form'
 
-export default function LostPage({type}) {
+export default function FormPage({type}) {
 
   const router = useRouter();
 

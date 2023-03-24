@@ -7,7 +7,7 @@ import blackCat from '../public/animations/black-cat.json'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 
-export default function Home() {
+export default function ScreeningPage() {
 
   const router = useRouter();
 

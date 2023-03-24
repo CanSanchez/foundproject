@@ -1,4 +1,4 @@
-//get coordinates for each neighbourhood
+
 const coordinates = [
     {
         neighbourhood: "Arbutus Ridge",
