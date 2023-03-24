@@ -1,16 +1,16 @@
 import { test, expect } from '@playwright/test';
 
-let urlHomePage = "http://localhost:3000/home";
+let urlLandingPage = "http://localhost:3000";
 
 test.describe('Header area', () => {
     test('The title tag', async({ page }) => {
-        await page.goto(urlHomePage)
+        await page.goto(urlLandingPage)
 
-        await expect(page).toHaveTitle('Found: Home');
+        await expect(page).toHaveTitle('Found');
     })
 
     test('The meta tag', async ({ page }) => { 
-        await page.goto(urlHomePage)
+        await page.goto(urlLandingPage)
         
         const metaDescriptionOne = page.locator('meta[name="description"]')
         await expect(metaDescriptionOne).toHaveAttribute("content", "Found is an app that digitizes missing pet posters. It aims to elimate paper wastes, boost exposure, and bring your best friend back home quickly and safely.")
@@ -19,18 +19,14 @@ test.describe('Header area', () => {
 
 test.describe('Main area', () => {
     test('Header Tag', async({ page }) => {
-        await page.goto(urlHomePage)
+        await page.goto(urlLandingPage)
 
-        const postHeading = page.getByRole('heading', { name: 'Recent Posts' });
-        expect(postHeading).toBeTruthy();
+        await expect(page.locator('h1')).toContainText('Never lose your bestfriend again');
     })
 
+    test('More About Us Button', async({ page }) => { 
+        await page.goto(urlLandingPage)
 
-    test('Display Leaflet Map', async({ page }) => {
-
-        await page.goto(urlHomePage)
-
-        const map = page.locator('div.leaflet-container');
-        expect(map).toBeTruthy();
+        await page.getByRole('button', { name: 'Get Started' }).click();
     })
 })

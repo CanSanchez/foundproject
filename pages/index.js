@@ -7,7 +7,7 @@ import catBall from '../public/animations/cat_ball.json'
 import Button from '../components/Button'
 import { useRouter } from 'next/router';
 
-export default function Home() {
+export default function LandingPage() {
 
   const router = useRouter();
 

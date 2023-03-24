@@ -30,10 +30,27 @@ export default function FormComponent({ onSubmit, type }) {
 
     const router = useRouter();
 
+    //   upload image to public folder
+
+    const handleImageUpload = (file) => {
+
+        setSelectedImage(file);
+
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('upload_preset', 'foundproject');
+
+        axios.post('https://api.cloudinary.com/v1_1/djhxv0heo/image/upload', formData).then((res) => {
+            console.log(res.data.secure_url);
+            setImage(res.data.secure_url);
+        });
+    }
+
 
     const handleSubmit = async (e) => {
+       
         e.preventDefault();
-        
+
         await onSubmit({
             petType,
             petName,
@@ -46,22 +63,9 @@ export default function FormComponent({ onSubmit, type }) {
             petImage,
             latitude,
             longitude
-        });
+        });  
     };
 
-//   upload image to public folder
-
-    const handleImageUpload = () => {
-
-        const formData = new FormData();
-        formData.append('file', selectedImage);
-        formData.append('upload_preset', 'foundproject');
-
-        axios.post('https://api.cloudinary.com/v1_1/djhxv0heo/image/upload', formData).then((res) => {
-            console.log(res.data.secure_url);
-            setImage(res.data.secure_url);
-        });
-    }
 
     
     useEffect(() => {
@@ -90,9 +94,9 @@ export default function FormComponent({ onSubmit, type }) {
                     </div>
                     <input type="file" id="img" name="img" accept="image/*" required
                         onChange={
-                            (e) => setSelectedImage(e.target.files[0])
+                            (e) => handleImageUpload(e.target.files[0])
                         }/>
-                    <Button name="Upload Photo" onClick={handleImageUpload} />
+                    {/* <Button name="Upload Photo" onClick={handleImageUpload} /> */}
                 </div>
 
                 <div className={styles.field}>
@@ -142,13 +146,14 @@ export default function FormComponent({ onSubmit, type }) {
 
             
             <div className={styles.field}>
-            <input type="number" id="phone" name="phone" required
-
+            <input type="tel" id="phone" name="phone" required
+                pattern="[0-9]{10}"
                 value={contactPhone} onChange={(e) => setPhone(e.target.value)}/>
                 <label htmlFor='phone'>Phone number</label>
             </div>
             <div className={styles.field}>
-                <input type="text" id="email" name="email" required 
+                <input type="text" id="email" name="email" required
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                     value={contactEmail} onChange={(e) => setEmail(e.target.value)}/>
                 <label htmlFor='email'>Email</label>
             </div>

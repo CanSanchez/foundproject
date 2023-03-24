@@ -14,13 +14,17 @@ To ensure functionality, we tested our code using Playwright
 
 A user-generated API of missing pets via Postqresql.
 
-#### [Place Dog](https://place.dog/) and [Place Kitten](https://placekitten.com/)
-
-Place.dog and PlaceKitten enable users to add random photos of dogs and cats to use as a placeholder in websites or applications with one simple line of code.
-
 #### [Leaflet](https://leafletjs.com/)
 
 An open-source JavaScript library for mobile-friendly interactive maps
+
+#### [Cloudinary](https://cloudinary.com/)
+
+An open-source JavaScript library for mobile-friendly interactive maps
+
+#### [Place Dog](https://place.dog/) and [Place Kitten](https://placekitten.com/)
+
+Place.dog and PlaceKitten enable users to add random photos of dogs and cats to use as a placeholder in websites or applications with one simple line of code.
 
 ## Technology Used
 

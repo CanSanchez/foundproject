@@ -49,7 +49,7 @@ export default function PetCard(props) {
                     <Image src="https://placekitten.com/200/300" alt="Pet Image" width={100} height={100} className={styles.cardimage} />
                 } */}
 
-                <img src={props.image} alt="Pet Image" className={styles.cardimage} />
+                <Image width={400} height={400} src={props.image} alt="Pet Image" className={styles.cardimage} />
                 <div className={styles.cardinfo}>
                     <div className={styles.cardinfoitem}>
                         <p className={styles.cardinfotitle}>Type</p>
