@@ -20,8 +20,7 @@ export default function ScreeningPage() {
     );
     console.log(router.query.type);
   }
-
-
+  
   return (
     <>
      <Head>

@@ -14,12 +14,12 @@ export default function FormPage({type}) {
   const router = useRouter();
 
   const [formType, setFormType] = useState(type);
-  console.log(formType);
-  console.log(type);
+  // console.log(formType);
+  // console.log(type);
 
   const handleSubmit = async ({ petType, petName, petColor, petBreed, lastLocation, contactPhone, contactEmail, petDescription, petImage, latitude, longitude }) => {
 
-    console.log(latitude, longitude)
+    // console.log(latitude, longitude)
     try {
       const { data } = await axios.post('/api/posts', {
         formType: formType,

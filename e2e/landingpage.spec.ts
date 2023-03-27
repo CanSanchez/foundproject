@@ -24,9 +24,9 @@ test.describe('Main area', () => {
         await expect(page.locator('h1')).toContainText('Never lose your bestfriend again');
     })
 
-    test('More About Us Button', async({ page }) => { 
+    test('Get Started Button', async({ page }) => { 
         await page.goto(urlLandingPage)
 
-        await page.getByRole('button', { name: 'Get Started' }).click();
+        await expect(page.locator('button')).toContainText('Get Started')
     })
 })
