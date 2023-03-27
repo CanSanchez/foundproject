@@ -45,11 +45,11 @@ test.describe('Main area', () => {
     test('The Button tag name', async ({ page }) => {
         await page.goto(UrlScreening)
 
-        const foundPetButton = page.getByRole('button', { name: 'I found a pet' });
-        expect(foundPetButton).toBeTruthy();
+        const foundPetButton = page.locator('button[name="I found a pet"]');
+        await expect(foundPetButton).toBeTruthy();
 
-        const lostPetButton = page.getByRole('button', { name: 'I lost a pet' });
-        expect(lostPetButton).toBeTruthy();
+        const lostPetButton = page.locator('button[name="I lost a pet"]');
+        await expect(lostPetButton).toBeTruthy();
     });
 
     test('A Tag', async({ page }) => {
