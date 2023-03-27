@@ -27,7 +27,15 @@ const config = {
             name: 'Desktop Safari',
             use: {
                 browserName: 'webkit',
-                viewport: { width: 1280, height: 720 },    
+                viewport: { width: 1280, height: 720 },
+                // contextOptions: {
+                //     recordHar: false
+                // },
+                // beforeEach: async (context) => {
+                //     const page = await context.newPage();
+                //     await page.goto('about:blank');
+                //     await page.close();
+                // },
             },
         },
         {

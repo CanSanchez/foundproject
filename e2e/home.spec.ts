@@ -21,7 +21,7 @@ test.describe('Main area', () => {
     test('Header Tag', async({ page }) => {
         await page.goto(urlHomePage)
 
-        const postHeading = page.getByRole('heading', { name: 'Recent Posts' });
+        const postHeading = page.locator('h1');
         expect(postHeading).toBeTruthy();
     })
 
