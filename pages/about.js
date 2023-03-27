@@ -3,6 +3,9 @@ import Head from 'next/head'
 import PetCard from '../components/PetCard';
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
+import Lottie from 'lottie-react'
+import aboutAnimation from '@/public/animations/about.json'
+
 
 export default function About( ) {
 
@@ -18,13 +21,14 @@ export default function About( ) {
         <main className={styles.main}>
             <Navbar />
             <div className={styles.wrappercolumn}>
-                <div className={styles.postContainer}>
-                    <h1 className={styles.heading}>About Us</h1>
-                    <div className={styles.columnflex}>
-                        <p>
-                        Found is a web application that allows users to post lost and found pets. It aims to elimate paper wastes, boost exposure, and bring your best friend back home quickly and safely.
-                        </p>
-                    </div>
+                <h1 className={styles.heading}>About Us</h1>
+                <div className={styles.animationcontainer}>
+                    <Lottie animationData={aboutAnimation} loop={true} width={200} height={200}/>
+                </div>
+                <div className={styles.columnflex}>
+                    <p>
+                    Found is a web application that allows users to post lost and found pets. It aims to elimate paper wastes, boost exposure, and bring your best friend back home quickly and safely.
+                    </p>
                 </div>
             </div>
         </main>
